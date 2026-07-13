@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="РЕДИБРОКЕР — помощь в сложных кредитных ситуациях. Пройдите короткий опрос.">
+  <title>РЕДИБРОКЕР — кредитный брокер</title>
+  <link rel="icon" href="assets/logo-mark.png">
+  <link rel="preload" as="image" href="assets/hero-finance-960.webp"
+        imagesrcset="assets/hero-finance-600.webp 600w, assets/hero-finance-960.webp 960w"
+        imagesizes="(max-width: 760px) calc(100vw - 28px), 525px">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="РЕДИБРОКЕР">
+        <img class="brand__logo" src="assets/logo-mark.png" alt="">
+        <span class="brand__name">РЕДИБРОКЕР</span>
+        <span class="brand__tagline">Помогаем в сложных<br>кредитных ситуациях</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Главное меню">
+        <a href="#process">Как мы работаем</a>
+        <a href="#quiz">Услуги</a>
+        <a href="#quiz">Опрос</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <button class="button button--outline header__cta" data-scroll-quiz>
+        Бесплатная консультация
+      </button>
+
+      <button class="menu-button" id="menu-button" type="button"
+              aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__layout">
+        <div class="hero__content reveal reveal--hero">
+          <h1>Помогаем получить кредит даже в сложной ситуации</h1>
+          <p class="hero__lead">
+            Пройдите короткий опрос за 1 минуту и узнайте,
+            какой формат помощи подойдёт именно вам.
+          </p>
+
+          <button class="button button--primary hero__button" data-scroll-quiz>
+            <span>Пройти опрос</span><span aria-hidden="true">→</span>
+          </button>
+
+          <div class="benefits" aria-label="Преимущества">
+            <article class="benefit">
+              <img src="assets/wallet.webp" width="96" height="96" alt="">
+              <div><strong>Без предоплаты</strong><span>Оплата только за результат</span></div>
+            </article>
+            <article class="benefit">
+              <img src="assets/doc.webp" width="96" height="96" alt="">
+              <div><strong>Работаем с любой КИ</strong><span>Даже если были отказы или просрочки</span></div>
+            </article>
+            <article class="benefit">
+              <img src="assets/person.webp" width="96" height="96" alt="">
+              <div><strong>Специалисты нашей команды</strong><span>Подбираем решение под вашу ситуацию</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal reveal--visual">
+          <img src="assets/hero-finance-960.webp"
+               srcset="assets/hero-finance-600.webp 600w,
+                       assets/hero-finance-960.webp 960w"
+               sizes="(max-width: 760px) calc(100vw - 28px), 525px"
+               width="960" height="695"
+               fetchpriority="high"
+               decoding="async"
+               alt="Банк, документ об одобрении, защитный щит, график и монеты">
+        </div>
+
+        <aside class="trust-card reveal reveal--trust">
+          <img src="assets/shield.webp" width="96" height="96" alt="">
+          <div>
+            <strong>Конфиденциально и безопасно</strong>
+            <span>Ваши данные защищены и не передаются третьим лицам</span>
+          </div>
+        </aside>
+
+        <section class="quiz reveal reveal--quiz" id="quiz" aria-labelledby="quiz-question">
+          <div id="quiz-view">
+            <div class="quiz__header">
+              <span id="step-label">Шаг 1 из 5</span>
+              <span class="quiz__time">
+                <img src="assets/clock.webp" width="96" height="96" alt=""> 1 минута
+              </span>
+            </div>
+
+            <div class="progress" id="progress" aria-hidden="true"></div>
+
+            <div class="quiz__stage" id="quiz-stage" aria-live="polite">
+              <h2 id="quiz-question">С какой сложностью вы столкнулись?</h2>
+              <div class="answers" id="answers"></div>
+            </div>
+
+            <div class="quiz__selection" id="quiz-selection" aria-live="polite"></div>
+            <div class="quiz__footer">
+              <button class="quiz__back" id="back-button" type="button" hidden>← Назад</button>
+              <div class="quiz__privacy">
+                <img src="assets/lock.webp" width="96" height="96" alt="">
+                <span>Ответы будут переданы специалистам нашей команды</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lead-form" id="lead-form-view" hidden>
+            <div class="lead-form__check">✓</div>
+            <h2>Ответы опроса сохранены</h2>
+            <p>
+              Оставьте контакт, чтобы специалисты нашей команды
+              могли связаться с вами и уточнить детали.
+            </p>
+
+            <form id="lead-form">
+              <label>
+                <span>Имя</span>
+                <input name="name" type="text" autocomplete="name"
+                       placeholder="Введите ваше имя" required>
+              </label>
+
+              <label id="contact-field">
+                <span id="contact-label">Контакт</span>
+                <input id="contact-input" name="contact" type="text"
+                       placeholder="Введите контакт" required>
+              </label>
+
+              <div class="telegram-help" id="telegram-help" hidden>
+                <button class="telegram-help__toggle" id="telegram-help-toggle"
+                        type="button" aria-expanded="false"
+                        aria-controls="telegram-help-content">
+                  Как узнать username в Telegram?
+                </button>
+                <div class="telegram-help__content" id="telegram-help-content" hidden>
+                  <strong>Где посмотреть username:</strong>
+                  <span>Telegram → Настройки → Аккаунт → Информация о вас → Имя пользователя.</span>
+                  <span>Если имени пользователя нет, создайте его и укажите в формате <b>@username</b>.</span>
+                </div>
+              </div>
+
+              <button class="button button--primary lead-form__submit" type="submit">
+                Получить консультацию
+              </button>
+
+              <div class="lead-form__privacy">
+                <img src="assets/lock.webp" width="96" height="96" alt="">
+                <span>Мы ценим вашу конфиденциальность и бережно относимся к вашим данным.</span>
+              </div>
+            </form>
+          </div>
+
+          <div class="success" id="success-view" hidden>
+            <div class="lead-form__check">✓</div>
+            <h2>Заявка сохранена</h2>
+            <p>
+              Ответы и контакт сохранены в этом браузере.
+              Подключение реальной отправки в Telegram или CRM выполняется отдельно.
+            </p>
+            <button class="button button--outline" id="restart-button" type="button">
+              Пройти опрос заново
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container process__panel reveal">
+        <h2>Как мы работаем</h2>
+
+        <div class="process__grid">
+          <article class="process-item">
+            <div class="process-item__icon">
+              <img src="assets/clipboard.webp" width="96" height="96" alt="">
+              <span>1</span>
+            </div>
+            <div><strong>Вы проходите опрос</strong><p>Отвечаете на несколько простых вопросов опроса</p></div>
+          </article>
+
+          <article class="process-item">
+            <div class="process-item__icon">
+              <img src="assets/search.webp" width="96" height="96" alt="">
+              <span>2</span>
+            </div>
+            <div><strong>Мы анализируем ситуацию</strong><p>Изучаем вашу историю и потребности</p></div>
+          </article>
+
+          <article class="process-item">
+            <div class="process-item__icon">
+              <img src="assets/doccheck.webp" width="96" height="96" alt="">
+              <span>3</span>
+            </div>
+            <div><strong>Подбираем варианты</strong><p>Предлагаем подходящие варианты решения</p></div>
+          </article>
+
+          <article class="process-item">
+            <div class="process-item__icon">
+              <img src="assets/handshake.webp" width="96" height="96" alt="">
+              <span>4</span>
+            </div>
+            <div><strong>Сопровождаем до результата</strong><p>Помогаем на каждом этапе</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer__inner">
+      <div>
+        <strong>РЕДИБРОКЕР</strong>
+        <span>Помощь в сложных кредитных ситуациях</span>
+      </div>
+      <button class="button button--outline" data-scroll-quiz>Пройти опрос</button>
+    </div>
+    <p class="container footer__legal">
+      Информация на сайте не является гарантией получения кредита.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
